@@ -37,7 +37,8 @@ export default function App() {
 
       <View style={{
         justifyContent: 'flex-start',
-        padding: 15
+        alignItems: 'flex-start',
+        padding: 15,
       }}>
         {
           //Over lay View
@@ -51,75 +52,78 @@ export default function App() {
           bottom: 0,
           left: 0,
           right: 0,
+          width:390,
           paddingHorizontal: 15,
           paddingVertical: 20,
           borderRadius: showMenu ? 15 : 0,
           // Transforming View...
-transform:[
-  { scale: scaleValue },
-  { translateX: offsetValue}
-]
+          transform: [
+            { scale: scaleValue },
+            { translateX: offsetValue }
+          ]
         }}>
 
           {
             // Menu Button...
           }
 
-<Animated.View style={{transform:[{
-  translateY: closeButtonOffset
-}]}}>
-
-<TouchableOpacity onPress={()=>{
-            // Do actions Here...
-            // Scaling the view...
-            Animated.timing(scaleValue, {
-              toValue:showMenu ? 1 : 0.88,
-              duration: 300,
-              useNativeDriver: true
-            })
-            .start() 
-            
-            Animated.timing(offsetValue, {
-              // Your Random Value
-              toValue:showMenu ? 0 : 230,
-              duration: 300,
-              useNativeDriver: true
-            })
-            .start()
-            Animated.timing(closeButtonOffset, {
-              toValue:!showMenu ? -30 : 0,
-              duration: 300,
-              useNativeDriver: true
-            })
-            .start() 
-
-            setShowMenu(!showMenu);
+          <Animated.View style={{
+            transform: [{
+              translateY: closeButtonOffset
+            }]
           }}>
-            <Image source={showMenu ? close : menu} style={{
-              width: 20,
-              height: 30,
-              tintColor: 'black',
-              marginTop: 40,
-            }}></Image>
+
+            <TouchableOpacity onPress={() => {
+              // Do actions Here...
+              // Scaling the view...
+              Animated.timing(scaleValue, {
+                toValue: showMenu ? 1 : 0.88,
+                duration: 300,
+                useNativeDriver: true
+              })
+                .start()
+
+              Animated.timing(offsetValue, {
+                // Your Random Value
+                toValue: showMenu ? 0 : 230,
+                duration: 300,
+                useNativeDriver: true
+              })
+                .start()
+              Animated.timing(closeButtonOffset, {
+                toValue: !showMenu ? -30 : 0,
+                duration: 300,
+                useNativeDriver: true
+              })
+                .start()
+
+              setShowMenu(!showMenu);
+            }}>
+              <Image source={showMenu ? close : menu} style={{
+                width: 20,
+                height: 30,
+                tintColor: 'black',
+                marginTop: 40,
+              }}></Image>
+              <Text style={{
+                fontSize: 30,
+                fontWeight: 'bold',
+                color: 'black',
+                paddingTop: 20
+              }}>{currentTab}</Text>
+
+              <Image source={photo} style={{
+                width: '100%',
+                height: 300,
+                borderRadius: 15,
+                marginTop: 20,
+
+              }}></Image>
+
+
+            </TouchableOpacity>
+
             <Text style={{
-              fontSize: 30,
-              fontWeight: 'bold',
-              color: 'black',
-              paddingTop: 20
-            }}>{currentTab}</Text>
-
-            <Image source={photo} style={{
-              width: '100%',
-              height: 300,
-              borderRadius: 15,
-              marginTop: 20,
-
-            }}></Image>
-
-           
-          </TouchableOpacity>
-
-          <Text style={{
               fontSize: 18,
               fontWeight: 'bold',
               paddingTop: 15,
@@ -130,8 +134,8 @@ transform:[
             <Text style={{
               fontWeight: 'bold',
             }}>developer Fullstack js</Text>
-</Animated.View>
-          
+          </Animated.View>
+
 
         </Animated.View>
         <Image source={profile} style={{
@@ -215,7 +219,7 @@ const TabButton = (currentTab, setCurrentTab, title, image) => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    // flex: 1,
     backgroundColor: '#1C93E9',
     alignItems: 'flex-start',
     justifyContent: 'flex-start',
