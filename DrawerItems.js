@@ -18,5 +18,25 @@ export default [
         name:'Refer a Friend!',
         iconType:'FontAwesome5',
         iconName:'user-friends'
-    }
+    },
+    {
+        name:'Home',
+        iconType:'FontAwesome5',
+        iconName:''
+    },
+    {
+        name:'registration',
+        iconType:'FontAwesome5',
+        iconName:''
+    },
+    {
+        name:'Events',
+        iconType:'FontAwesome5',
+        iconName:''
+    },
+    {
+        name:'Home',
+        iconType:'FontAwesome5',
+        iconName:''
+    },
 ]

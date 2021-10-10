@@ -11,7 +11,12 @@ import ReferScreen from './Refer';
 import DrawerItems from './DrawerItems';
 // import { Header } from 'react-native-elements';
 
-
+//tab icons
+import home from './assets/home.png';
+import search from './assets/search.png';
+import notifications from './assets/home.png';
+import settings from './assets/bell.png';
+import logout from './assets/logout.png';
 
 
 
